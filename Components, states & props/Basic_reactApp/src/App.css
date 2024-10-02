@@ -1,0 +1,38 @@
+body{
+  background-color: black;
+}
+#root{
+height: 90vh;
+display: flex;
+/* border: 2px solid white; */
+flex-direction: column;
+
+
+text-align: center;
+margin: 30px 50px;
+color: rgb(6, 223, 223);
+
+
+
+}
+.box1{
+  flex: 8;
+  background-color: #444;
+
+}
+.box1 h1{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 50px;
+
+}
+.box2{
+  flex: 4;
+  background-color: aqua;  
+  
+}
+.box2 h1{
+  color: #444;
+  align-items: center;
+  font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

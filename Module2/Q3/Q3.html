@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and Drop Example</title>
+    <style>
+      /* Styling the containers */
+      .main{
+        display: flex;
+      }
+      .container {
+        width: 100%;
+        height: 500px;
+        border: 2px dashed #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+      }
+
+      /* Styling the image */
+      img {
+        width: 100px;
+        cursor: grab;
+      }
+
+      /* Highlight the container when dragging over it */
+      .container.over {
+        border-color: #00f;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Two containers for dragging and dropping -->
+    <div class=" main">
+      <div class="container" id="container1">
+        <img
+          src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.jpg?s=2048x2048&w=is&k=20&c=oo7SGfjmPkybpqoNccDsYWG-4uxSmn8G79NiLA1mNvs="
+          alt="Draggable Image"
+          id="draggable"
+          draggable="true"
+        />
+        
+      </div>
+      <div class="container" id="container2">
+        <img
+          src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.jpg?s=2048x2048&w=is&k=20&c=oo7SGfjmPkybpqoNccDsYWG-4uxSmn8G79NiLA1mNvs="
+          alt="Draggable Image"
+          id="draggable"
+          draggable="true"
+        />
+      </div>
+    </div>
+    <script>
+      // Get the draggable element
+      const draggable = document.getElementById("draggable");
+      const containers = document.querySelectorAll(".container");
+
+      // Add event listeners to containers
+      containers.forEach((container) => {
+        container.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          container.classList.add("over");
+        });
+
+        container.addEventListener("dragleave", () => {
+          container.classList.remove("over");
+        });
+
+        container.addEventListener("drop", (e) => {
+          e.preventDefault();
+          container.classList.remove("over");
+          container.appendChild(draggable);
+        });
+      });
+    </script>
+  </body>
+</html>

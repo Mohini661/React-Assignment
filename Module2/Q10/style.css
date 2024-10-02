@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  display: flex;
+  border: 1px solid black;
+  /* gap: 40px; */
+  padding: 80px;
+  margin: 20px;
+  background-color: rgb(79, 79, 193);
+}
+.box1 {
+  border: 1px solid black;
+  flex: 4;
+  padding: 80px;
+  background-color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 80px;
+}
+h2 {
+  text-align: center;
+}
+.box2 {
+  border: 1px solid black;
+  flex: 8;
+  padding: 30px;
+}
+.line1,.line2 h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.input-div {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.amt {
+  margin-top: 10px;
+  outline: none;
+  padding: 10px;
+  width: 95%;
+  border-radius: 3px;
+  font-size: 15px;
+  border-color: rgb(173, 169, 169);
+  box-shadow: none;
+}
+.country {
+  display: flex;
+  justify-content: space-between;
+}
+#country {
+  border-radius: 3px;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 10px;
+  outline: none;
+}
+.icon {
+  display: flex;
+  margin-top: 40px;
+}
+.btn {
+  background-color: rgb(79, 79, 193);
+  font-size: 15px;
+  border-radius: 3px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #fff;
+}
+.btn:hover{
+    background: #4534fe
+
+}

@@ -1,0 +1,35 @@
+<!--  The following function returns true if the parameter age is greater than
+18. Otherwise it asks for a confirmation and returns its result:
+function checkAge(age) {
+   if (age > 18) {
+     return true;
+   } else {
+     // ...return confirm (‘did parents allow you?');
+   }
+ } -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmation</title>
+  </head>
+  <body></body>
+  <script>
+    const age = prompt("How old are you?");
+    function checkAge(age) {
+      if (age > 18) {
+        return true;
+      } else {
+        return confirm("did parents allow you?"); 
+    }
+}
+// if user click 'ok' confirm returns True & if user click 'Cancel' confirm returns "False"
+    if (checkAge(age)) {
+      alert("Yes");
+    } else {
+      alert("NO");
+    }
+    // checkAge(14)
+  </script>
+</html>

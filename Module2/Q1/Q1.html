@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price calculate</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+      }
+      th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #f2f2f2;
+      }
+      .container {
+        margin: auto;
+        margin-top: 20px;
+      }
+      .remove-btn {
+        background-color: #f43b2e;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .remove-btn:hover {
+        background-color: #cc2c2c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table id="cart">
+        <thead>
+          <tr>
+            <th>Product info</th>
+            <th>Quntity</th>
+            <th>Price(per unit)</th>
+            <th>Price (subtotal)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>Fortunata Window Hardware - Decorative Holdbacks - Mocha</td>
+          <td><input type="number" value="2" id="quantity1" /></td>
+          <td id="price1">29.99</td>
+          <td id="subtotal1">59.98</td>
+          <td>
+            <button class="remove-btn" onclick="removeItem(1)">Remove</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Woven Trellis Window Hardware - Clip Rings - Bronze</td>
+          <td><input type="number" value="1" id="quantity2" /></td>
+          <td id="price2">12.99</td>
+          <td id="subtotal2">12.99</td>
+          <td>
+            <button class="remove-btn" onclick="removeItem(2)">Remove</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="subtotal">Total Subtotal:</td>
+          <td colspan="2">$<span id="totalSubtotal">72.97</span></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      function updateSubtotal() {
+        const quantity1 = parseInt(document.getElementById("quantity1").value);
+        const price1 = parseFloat(document.getElementById("price1").innerText);
+        const quantity2 = parseInt(document.getElementById("quantity2").value);
+        const price2 = parseFloat(document.getElementById("price2").innerText);
+
+        const subtotal1 = quantity1 * price1;
+        const subtotal2 = quantity2 * price2;
+
+        document.getElementById("subtotal1").innerText = subtotal1.toFixed(2);
+        document.getElementById("subtotal2").innerText = subtotal2.toFixed(2);
+
+        const totalSubtotal = subtotal1 + subtotal2;
+        document.getElementById("totalSubtotal").innerText =
+          totalSubtotal.toFixed(2);
+      }
+      function removeItem(itemNumber) {
+        document.getElementById("quantity" + itemNumber).value = 0;
+        updateSubtotal();
+      }
+      document.querySelectorAll("input[type=number]").forEach((input) => {
+        input.addEventListener("change", updateSubtotal);
+      });
+
+      updateSubtotal();
+    </script>
+  </body>
+</html>

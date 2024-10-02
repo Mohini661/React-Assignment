@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>currency converter</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box1">
+        <form action="myform" class="myform">
+          <h2>Currency Converter</h2>
+          <div class="input-div">
+            <label for="amount">Enter Amount</label><br />
+            <input type="text" class="amt" />
+          </div>
+          <div class="input-div country">
+            <div class="from">
+              <label for="from">From</label><br />
+              <select name="country" id="country">
+                <option value="usd">USD</option>
+                <option value="inr">INR</option>
+              </select>
+            </div>
+            <div class="icon">
+              <i class="fa fa-exchange"></i>
+            </div>
+            <div class="to">
+              <label for="to">To</label><br />
+              <select name="country" id="country">
+                <option value="inr">INR</option>
+                <option value="usd">USD</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-div">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <button type="submit" class="btn input-div">Get Exchange Rate</button>
+        </form>
+      </div>
+      <div class="box2">
+        <div class="line2"><h1>Currency Converter App</h1></div>
+        <div class="line1"><h1>in HTML,CSS and Javascript</h1></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
