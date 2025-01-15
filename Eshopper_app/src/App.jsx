@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Products from "./components/Products";
 import { Outlet } from "react-router-dom";
-import ProductListContextProvider from "./Store/ProductContext"
+import ProductListContextProvider from "./store/ProductContext";
 
 function App() {
   return (
